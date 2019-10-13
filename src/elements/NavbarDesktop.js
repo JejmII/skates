@@ -14,9 +14,9 @@ class NavDesktop extends React.Component {
               <div></div>
               <ul>
                   <li><Link activeClassName="active" to="#cennik">Cenník</Link></li>
-                  <li><Link activeClassName="active" to="#">Technológia</Link></li>
-                  <li><Link activeClassName="active" to="#">Vedeli ste</Link></li>
-                  <li><Link activeClassName="active" to="#">Kontakty</Link></li>
+                  <li><Link activeClassName="active" to="#technologia">Technológia</Link></li>
+                  <li><Link activeClassName="active" to="#info">Informácie</Link></li>
+                  <li><Link activeClassName="active" to="#kontakty">Kontakty</Link></li>
               </ul>
             </Menu>
           </Container1>

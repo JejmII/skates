@@ -8,26 +8,12 @@ import { color, below } from "../utilities"
 import enterprise from  "../images/enterprise.svg"
 import skates from  "../images/skates.svg"
 import machine from  "../images/machine.svg"
-import cennik from  "../images/Cennik.png"
-import prosharp from  "../images/Prosharp.jpg"
-import G18 from  "../images/G18.png"
-import korcule from "../images/korcule.jpg"
-import { graphql, useStaticQuery  } from "gatsby"
-
+import cennik from  "../images/Cennik.webp"
+import korcule from "../images/korcule.webp"
+import stroj from "../images/Prosharp.webp"
+import G18 from "../images/G18.webp"
 
 const IndexPage = () => {
-
-  const data = useStaticQuery(graphql`
-  query {
-    ba: file(relativePath: { eq: "background.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`)
 
 return (
   <>
@@ -41,7 +27,7 @@ return (
               <Col xsOffset={0} xs={12} smOffset={0} sm={4} mdOffset={0} md={4} lgOffset={0} lg={4}>
                 <div className="firstSection">
                   <div>
-                    <img src={enterprise} className="firstSectionIcons" alt="Ikonka" />
+                    <img src={enterprise} className="firstSectionIcons" alt="Ikonka pôsobime na trhu." />
                   </div>
                   <p className="firstSectionHead">
                   Pôsobíme na trhu <span>vyše ako 5 rokov</span>
@@ -53,7 +39,7 @@ return (
               <Col xsOffset={0} xs={12} smOffset={0} sm={4} mdOffset={0} md={4} lgOffset={0} lg={4}>
                 <div className="firstSection">
                   <div>
-                    <img src={skates} className="firstSectionIcons" alt="Ikonka" />
+                    <img src={skates} className="firstSectionIcons" alt="Ikonka každý rok nabrúsime viac ako 1000 korčúľ.l" />
                   </div>
                   <p className="firstSectionHead">
                     Kadžý rok nabrúsených <span>viac ako 1000 korčúľ</span>
@@ -83,7 +69,7 @@ return (
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={4} lgOffset={0} lg={4}>
                 <div className="secondSection">
                   <Head3 align="center">Pred prvým použitím</Head3>
-                  <Para1 align="center">Kvôli bezpečnosti nie je väčšina nových korčulí nabúsená. Preto pred prvým korčulovaním sa u nás zastavte a vybavíme to.</Para1>
+                  <Para1 align="center">Kvôli bezpečnosti nie je väčšina nových korčulí nabúsená. Preto pred prvým korčulovaním sa u nás zastavte a nabrúsime ich.</Para1>
                 </div>
                 </Col>
                 <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={4} lgOffset={0} lg={4}>
@@ -94,7 +80,7 @@ return (
                 </Col>
                 <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={4} lgOffset={0} lg={4}>
                 <div className="secondSection">
-                <Head3 align="center">Korčuliar Poloprofesionál</Head3>
+                <Head3 align="center">Pri aktívnom tréningu</Head3>
                 <Para1 align="center">Naše orientačné doporučenie pre brúsenie korčúľ je raz za 1 až 2 týždne ak sa používajú korčule 3 až 5 krát týždenne. pri aktívnom tréningu.</Para1>
                 </div>
               </Col>
@@ -102,10 +88,10 @@ return (
                 </Row>
             </Container1>
           </div>
-
+          <div className="anchor" id="cennik"></div>
           <div className="greyground margin-space-5">
-          <Head2 color="white" align="center" style={{padding:"3rem 0 2rem 0"}}>Cenník</Head2>
-            <Container2 id="cennik">
+          <Head2 color="white" align="center" style={{paddingTop:"30px"}}>Cenník</Head2>
+            <Container2>
             <Row between="sm">
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={2} md={8} lgOffset={0} lg={9}>
                 <div className="thirdSection">
@@ -153,11 +139,11 @@ return (
             </Container2>
           </div>
 
-
+          <div className="anchor" id="technologia"></div>
           <Container1 className="fourthSection margin-space-15">
             <Row>
               <Col xsOffset={0} xs={12} smOffset={2} sm={8} mdOffset={0} md={6} lgOffset={0} lg={5}>
-                <a href="https://www.youtube.com/watch?v=mdTOPO6bGYs"><img src={prosharp} alt="Prosharp nástroj na brúsenie korčúľ." /></a>
+                <a href="https://www.youtube.com/watch?v=mdTOPO6bGYs" target="_blank" rel="noopener noreferrer"><img src={stroj} alt="Prosharp AS1001" /></a>
               </Col>
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={2} lg={5}>
                 <Head2 align="center">Vikingovia vedeli na čom brúsiť</Head2>
@@ -166,14 +152,17 @@ return (
             </Row>
           </Container1>
 
+          <div className="anchor" id="info"></div>
           <Container1 className="fourthSection margin-space-15">
             <Row>
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={0} lg={6} style={{paddingTop:"5vw"}}>
-                <Head2 align="center">Individuálny prístup</Head2>
-                <Para1 align="center">Překvapit by však mohl fakt, že nikdo, snad krom toho, kdo balónky k obloze vypustil, netuší, jakou má ona stuha barvu. Je totiž tak lesklá, že za světla se v ní odráží nebe a za tmy zase není vidět vůbec. Když svítí slunce tak silně jako nyní, tak se stuha třpytí jako kapka rosy a jen málokdo vydrží dívat se na ni přímo déle než pár chvil. Jak vlastně vypadají ony balónky?. Ptají se často lidé. Inu jak by vypadaly - jako běžné pouťové balónky střední velikosti, tak akorát nafouknuté. Červený se vedle modrého a zeleného zdá trochu menší, ale to je nejspíš jen optický klam, a i kdyby byl skutečně o něco málo menší, tak vážně jen o trošičku.</Para1>
+                <Head2 align="center">Krasokorčule a hokejové korčule</Head2>
+                <Para1 align="center">Ako často ich brúsiť ? Samozrejme záleží na tom ako sa často používajú, váhe korčuliara/korčuliarky, kvalite noža, ale aj štýle jazdy a pod. Aj tak sa pokusíme podať základné informácie pre brúsenie korčúľ aspoň pre rekreačných korčuliarov bez skúseností.
+Najskôr je nutné zmieniť, že keď korčule kúpite, musíte ich nechať pred prvým použitím nabrúsiť, korčule nie sú z výroby zámerne nabrúsené minimálne z bezpečnostných dôvodov pri preprave a hlavne pri skúšaní.
+Na novom noži je potrebné vybrúsiť tzv. žliabik, teda výbrus spodnej hrany noža v tvaru písmena U, vďaka ktorému vzniknú dve ostré hrany, ktoré sa zarezávajú do ľadu.</Para1>
              </Col>
              <Col xsOffset={0} xs={12} smOffset={2} sm={8} mdOffset={0} md={6} lgOffset={1} lg={5}>
-                <img src={G18} alt="Prosharp nástroj na brúsenie korčúľ." style={{maxHeight:"780px"}}/>
+                <img src={G18} alt="Prosharp nástroj na brúsenie korčúľ." style={{maxHeight:"780px"}} />
               </Col>
             </Row>
           </Container1>
@@ -185,20 +174,21 @@ return (
                 <img src={korcule} alt="Prosharp nástroj na brúsenie korčúľ." />
               </Col>
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={3} lg={5}>
-                <Head2 align="center" color="white">H2 - Poppins Thin 45</Head2>
-                <Para1 align="center" color="white">Stále si víceméně drží výšku a ani do stran se příliš nepohybují. Proti slunci to vypadá, že se slunce pohybuje k západu rychleji než balónky, a možná to tak skutečně je. Nejeden filozof by mohl tvrdit, že balónky se sluncem závodí, ale fyzikové by to jistě vyvrátili. Z fyzikálního pohledu totiž balónky působí zcela nezajímavě.</Para1>
-                <Para1 align="center" color="white">Nejvíc bezpochyby zaujmou děti - jedna malá holčička zrovna včera div nebrečela, že by snad balónky mohly prasknout. A co teprve ta stuha. Stuha, kterou je každý z trojice balónků uvázán, aby se nevypustil. Očividně je uvázaná dostatečně pevně, protože balónky skutečně neucházejí. To ale není nic zvláštního.</Para1>
-                <Para1 align="center" color="white">Jenže kvůli všudy přítomné trávě jsou stíny balónků sotva vidět, natož aby šlo rozeznat, jakou barvu tyto stíny mají. Uvidět tak balónky náhodný kolemjdoucí, jistě by si pomyslel, že už tu takhle poletují snad tisíc let. Stále si víceméně drží výšku a ani do stran se příliš nepohybují. Proti slunci to vypadá, že se slunce pohybuje k západu rychleji než balónky, a možná to tak skutečně je. </Para1>
+                <Head2 align="center" color="white">Čo je potrebné vedieť o žliabiku</Head2>
+                <Para1 align="center" color="white">Žliabik si môžete nechať urobiť aj podľa vašich požadaviek. Náročnejší aktívni korčuliari riešia aj hĺbku žliabika. Čím vyššie číslo, tým je hĺbka žliabika menšia (žliabik je mäkší). Tento žliabik prefrujú agilní korčuliari, ktorí sú rýchli a často rýchlo menia smer.</Para1>
+                <Para1 align="center" color="white">Naopak hlbší žliabik je obecne povedané vhodný pre silových korčuliarov, ktorí sa potrebujú o ľad viac zaprieť. Hlboký žliabik je tak častovyužívaný silovejšími alebo ťažšími korčuliarmi.</Para1>
+                <Para1 align="center" color="white">Tvar žliabika je potom samozrejme veľmi individuálny, každému môže vyhovovať niečo iné.</Para1>
+                <Para1 align="center" color="white">Každému korčuliarovi doporučujeme pred vstupom na ľad hrany skontrolovať. Pokiaľ uvidíte poškodené hrany, je potreba nôž upraviť. Pri drobnom poškodení môže stačiť brusný kameň. Pri väčšom poškodení noža je potreba nechať nože prebrúsiť na brúske k tomu určenej.</Para1>
              </Col>
             </Row>
             </Container1>
             </div>
-            <div className="fifthSection">
-                <Head2 align="center">V prípade akýchkoľvek otázok nás kontaktuje.</Head2>
-                <Head2 align="center">Je možné sa taktiež sa u nás zastaviť na pobočke.</Head2>
-                <Para align="center">Profesionálne brúsenie korčúľ v Bratislave</Para>
+            <div className="fifthSection margin-space-10">
+                <Head2 align="center">V prípade akýchkoľvek otázok nás neváhajte kontaktuje</Head2>
+                <Para align="center"> -<i> Profesionálne brúsenie korčúľ v Bratislave</i></Para>
             </div>
             <Row className="zero">
+            <div className="anchor" id="kontakty"></div>
               <Col xsOffset={0} xs={12} smOffset={0} sm={12} mdOffset={0} md={12} lgOffset={0} lg={12} >
             <div class="map"><iframe title="Mapa s miestom kde sídli naša firma." width="1920" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=SPORT%20BEKR%20s.r.o&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
             </Col>
@@ -210,6 +200,13 @@ return (
 
 }
 const Content = styled.div`
+
+.anchor{
+    display: block;
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+}
 
   img{
     width:100%;
@@ -340,29 +337,6 @@ table{
 
 }
 
-
-.background{
-  background:${color.gradient};
-  position:absolute;
-  top: 0px;
-  left: 0px;
-  width:100%;
-  height:100vh;
-
-  .uvodni-logo{
-    max-width:1200px;
-    max-height:320px;
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20vh;
-    z-index:2;
-    background-size: cover;
-
-  }
-}
-
 .firstSection{
   max-width: 430px;
   margin:auto;
@@ -379,7 +353,6 @@ table{
   span{
     display:block;
     font-weight: 300;
-
   }
 
 }
@@ -430,7 +403,5 @@ table{
   ${below.tabletL`padding: 30px 15px `}
   ${below.mobile`padding: 0 15px`}
 }
-
-
 `
 export default IndexPage

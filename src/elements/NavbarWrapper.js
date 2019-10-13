@@ -25,11 +25,11 @@ class NavWrapper extends React.Component {
       render() {
         return (
             <>
-            {this.state.width <= 880 &&
+            {this.state.width <= 830 &&
                 <NavMobile />
             }
         
-            {this.state.width > 880 &&
+            {this.state.width > 830 &&
             <NavDesktop />
             }
             </>

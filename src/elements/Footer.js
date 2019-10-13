@@ -11,7 +11,7 @@ class PageFooter extends React.Component {
           <Foot>
             <Container1 style={{paddingBottom:"30px"}}>
               <Row between="lg">
-                <Col  xs={6}  sm={4} md={3} lg={2}>
+                <Col  xs={6}  smOffset={1} sm={4} md={3} lg={2}>
                 <Head4>Firemné údaje</Head4>
                     <Para1>SPORT BEKR, s. r. o.</Para1>
                     <Para1>Gercenova 5</Para1>
@@ -20,26 +20,31 @@ class PageFooter extends React.Component {
                     <Para1>IČ DPH: SK2024138259</Para1>
                 </Col>
 
-                <Col xsOffset={1} xs={5} smOffset={4} sm={4} mdOffset={0} md={3} lgOffset={0} lg={2}>
-                <Head4>Prodejňa</Head4>
+                <Col xsOffset={1} xs={5} smOffset={2} sm={4} mdOffset={0} md={3} lgOffset={0} lg={2}>
+                <Head4>Brúsiareň</Head4>
                     <Para1>Bradáčova 1721/5</Para1>
                     <Para1>851 01 Petržalka</Para1>
                     <Para1>Slovenská Republika</Para1>
+                    <Para1 className="line-height-p">* Budova bývalej kotolňe medzi Bradáčovou 5-6</Para1>
                 </Col>
 
-                <Col xs={6} sm={4} md={3} lg={2}>
+                <Col xs={6} smOffset={1} sm={4} md={3} lg={2}>
                   <Head4>Kontaktné údaje</Head4>
                     <Para1 className="contact"><a href="tel:0903 885 858">Tel. č.1: 0903 885 858</a></Para1>
                     <Para1 className="contact"><a href="tel:026 241 1864">Tel. č.2: 026 241 1864</a></Para1>
                     <Para1 className="contact"><a href="mailto:info@servis-lyzi.sk">Mail: info@servis-lyzi.sk</a></Para1>
                 </Col>
 
-                <Col xsOffset={1} xs={5} smOffset={4} sm={4} mdOffset={0} md={3} lgOffset={0} lg={2}>
+                <Col xsOffset={1} xs={5} smOffset={2} sm={4} mdOffset={0} md={3} lgOffset={0} lg={2}>
                   <Head4>Otváracia doba</Head4>
                     <Para1>Pondelok až Piatok</Para1>
-                    <Para1>09:00 - 18:00</Para1>
-                    <Para1>Sobota, Nedela</Para1>
-                    <Para1>Zatvorené</Para1>
+                    <Para1>14:00 - 18:30</Para1>
+                    <Para1 className="warning"><strong> ! Pozor zmena od 1.11.2019 !</strong></Para1>
+                    <Para1>Pondelok až Piatok</Para1>
+                    <Para1>09:00 - 12:30</Para1>
+                    <Para1>13:30 - 19:00</Para1>
+                    <Para1>Sobota</Para1>
+                    <Para1>9:00 - 13:00</Para1>
                 </Col>
               </Row>
             </Container1>
@@ -48,9 +53,9 @@ class PageFooter extends React.Component {
               <Row between="md">
                 <Col xsOffset={0} xs={12} smOffset={0} sm={12} mdOffset={0} md={3} lgOffset={0} lg={3}>
                   <Para1  style={{textAlign:"center"}}>
-                    <a href="https://www.instagram.com/ski_bekr/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram fa-2x socialNetwork instagram"></i></a>
-                    <a href="https://www.facebook.com/servislyzipetrzalka/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f fa-2x socialNetwork facebook"></i></a>
-                    <a href="https://www.youtube.com/channel/UCOvJTZTzn9S0rg5SFl7XxOw/videos" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube fa-2x socialNetwork youtube"></i></a>
+                    <a href="https://www.instagram.com/ski_bekr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram fa-2x socialNetwork instagram"></i></a>
+                    <a href="https://www.facebook.com/servislyzipetrzalka/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook-f fa-2x socialNetwork facebook"></i></a>
+                    <a href="https://www.youtube.com/channel/UCOvJTZTzn9S0rg5SFl7XxOw/videos" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><i className="fab fa-youtube fa-2x socialNetwork youtube"></i></a>
                   </Para1>
                 </Col>
                 <Col xsOffset={0} xs={12} smOffset={0} sm={12} mdOffset={0} md={4} lgOffset={0} lg={4}>
@@ -88,6 +93,15 @@ const Foot = styled.footer`
         }
       }
 
+      .line-height-p{
+        line-height:20px;
+        padding-top:15px;
+      }
+
+      .warning{
+        color:${color.red};
+      }
+
       p{
         line-height: 15px;
       }
@@ -101,5 +115,7 @@ const Foot = styled.footer`
         line-height: 25px;
         `}
       } 
+
+    
 `
   export default PageFooter

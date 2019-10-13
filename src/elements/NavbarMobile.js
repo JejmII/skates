@@ -31,10 +31,10 @@ class NavMobile extends React.Component {
                 </Menu>
                 {this.state.isOpen &&
                 <ul>
-                    <li><Link to="#"  activeClassName="active" >Servis</Link></li>
-                    <li><Link to="#"activeClassName="active">Požičovňa</Link></li>
-                    <li><Link to="#" activeClassName="active">Predaj</Link></li>
-                    <li><Link to="#" activeClassName="active">Kontakty</Link></li>
+                    <li><Link to="#cennik"  activeClassName="active" >Cenník</Link></li>
+                    <li><Link to="#technologia" activeClassName="active">Technológia</Link></li>
+                    <li><Link to="#info" activeClassName="active">Informácie</Link></li>
+                    <li><Link to="#kontakty" activeClassName="active">Kontakty</Link></li>
                 </ul>
                 }
             </div>

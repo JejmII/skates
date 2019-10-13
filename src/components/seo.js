@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import back from "../images/back.jpg"
+
 
 
 function SEO({ description, lang, meta, title }) {
@@ -42,6 +44,11 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content:  <img src={back} alt="Úvodka" />
+
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -61,6 +68,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 }
 
 export default SEO

@@ -25,7 +25,7 @@ const SetupBody2 = styled.div(`
 
 const data = useStaticQuery(graphql`
 query {
-  ba: file(relativePath: { eq: "background.jpg" }) {
+  back: file(relativePath: { eq: "back.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 1920, maxHeight: 1080, quality: 100) {
         ...GatsbyImageSharpFluid
@@ -46,7 +46,7 @@ query {
         <NavWrapper />
         <BgImage
               title="astronaut"
-              fluid={data.ba.childImageSharp.fluid}
+              fluid={data.back.childImageSharp.fluid}
           />
           <main>{children}</main>
           </SetupBody2>
