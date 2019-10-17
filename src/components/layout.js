@@ -40,6 +40,17 @@ query {
     <Helmet>
       <link data-n-head="true" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
       <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,500&display=swap&subset=latin-ext" rel="stylesheet"/>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+                document.addEventListener('DOMContentLoaded', function(){ 
+                if (window.location.protocol != "https:") {
+                window.location = 'https://' + window.location.hostname + window.location.pathname + window.location.hash;
+                }
+                }, false);
+              `,
+        }}
+      />
     </Helmet>
       <SetupBody>
         <SetupBody2>

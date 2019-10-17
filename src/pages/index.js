@@ -8,12 +8,44 @@ import { color, below } from "../utilities"
 import enterprise from  "../images/enterprise.svg"
 import skates from  "../images/skates.svg"
 import machine from  "../images/machine.svg"
-import cennik from  "../images/Cennik.webp"
-import korcule from "../images/korcule.webp"
-import stroj from "../images/Prosharp.webp"
-import G18 from "../images/G18.webp"
+import { graphql, useStaticQuery  } from "gatsby"
+import Img from "gatsby-image"
+
 
 const IndexPage = () => {
+
+const data = useStaticQuery(graphql`
+query {
+  cennik: file(relativePath: { eq: "Cennik.png" }) {
+    childImageSharp {
+      fluid( quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  },
+  korcule: file(relativePath: { eq: "korcule1.png" }) {
+    childImageSharp {
+      fluid( quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  },
+  stroj: file(relativePath: { eq: "Prosharp.jpg" }) {
+    childImageSharp {
+      fluid( quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  },
+  ponuka: file(relativePath: { eq: "Ponuka.png" }) {
+    childImageSharp {
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`)
 
 return (
   <>
@@ -133,7 +165,7 @@ return (
                 </div>
               </Col>
               <Col xs={false} sm={false}  md={false} lgOffset={0} lg={3} style={{maxHeight:"375px"}}>
-              <img src={cennik} style={{margin:"0 0 0 30px "}}alt="" />
+              <Img fluid={data.cennik.childImageSharp.fluid} alt="Obrázok, ktorý sa nachádza pri cenníku brusenia korčúľ."/>
               </Col>
             </Row>
             </Container2>
@@ -143,7 +175,8 @@ return (
           <Container1 className="fourthSection margin-space-15">
             <Row>
               <Col xsOffset={0} xs={12} smOffset={2} sm={8} mdOffset={0} md={6} lgOffset={0} lg={5}>
-                <a href="https://www.youtube.com/watch?v=mdTOPO6bGYs" target="_blank" rel="noopener noreferrer"><img src={stroj} alt="Prosharp AS1001" /></a>
+                <a href="https://www.youtube.com/watch?v=mdTOPO6bGYs" target="_blank" rel="noopener noreferrer">
+                <Img fluid={data.stroj.childImageSharp.fluid} alt="Prosharp AS1001 - Stroj ktorý sa stára o presnosť brúsenia korčúľ v Bratislave."/> </a>
               </Col>
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={2} lg={5}>
                 <Head2 align="center">Vikingovia vedeli na čom brúsiť</Head2>
@@ -155,14 +188,14 @@ return (
           <div className="anchor" id="info"></div>
           <Container1 className="fourthSection margin-space-15">
             <Row>
-              <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={0} lg={6} style={{paddingTop:"5vw"}}>
+              <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={0} lg={6}>
                 <Head2 align="center">Krasokorčule a hokejové korčule</Head2>
                 <Para1 align="center">Ako často ich brúsiť ? Samozrejme záleží na tom ako sa často používajú, váhe korčuliara/korčuliarky, kvalite noža, ale aj štýle jazdy a pod. Aj tak sa pokusíme podať základné informácie pre brúsenie korčúľ aspoň pre rekreačných korčuliarov bez skúseností.
 Najskôr je nutné zmieniť, že keď korčule kúpite, musíte ich nechať pred prvým použitím nabrúsiť, korčule nie sú z výroby zámerne nabrúsené minimálne z bezpečnostných dôvodov pri preprave a hlavne pri skúšaní.
 Na novom noži je potrebné vybrúsiť tzv. žliabik, teda výbrus spodnej hrany noža v tvaru písmena U, vďaka ktorému vzniknú dve ostré hrany, ktoré sa zarezávajú do ľadu.</Para1>
              </Col>
-             <Col xsOffset={0} xs={12} smOffset={2} sm={8} mdOffset={0} md={6} lgOffset={1} lg={5}>
-                <img src={G18} alt="Prosharp nástroj na brúsenie korčúľ." style={{maxHeight:"780px"}} />
+             <Col xsOffset={0} xs={12} smOffset={2} sm={8} mdOffset={0} md={6} lgOffset={2} lg={4}>
+                <Img  fluid={data.ponuka.childImageSharp.fluid} alt="Ponúkame Vám brúsenie hokejových korčúľ, krasokorčuliarských a rekreačných korčúľ." />
               </Col>
             </Row>
           </Container1>
@@ -171,7 +204,7 @@ Na novom noži je potrebné vybrúsiť tzv. žliabik, teda výbrus spodnej hrany
             <Container1>
             <Row className="fifthSectionStart">
               <Col xs={false} sm={false} mdOffset={0} md={6} lgOffset={0} lg={4} style={{marginTop:"-8%"}}>
-                <img src={korcule} alt="Prosharp nástroj na brúsenie korčúľ." />
+                <Img fluid={data.korcule.childImageSharp.fluid} alt="Viac zaújmavých informácií o korčuliach a ích servise, ktorý pozostáva z brúsenia. "/>
               </Col>
               <Col xsOffset={0} xs={12} smOffset={1} sm={10} mdOffset={0} md={6} lgOffset={3} lg={5}>
                 <Head2 align="center" color="white">Čo je potrebné vedieť o žliabiku</Head2>
@@ -187,12 +220,9 @@ Na novom noži je potrebné vybrúsiť tzv. žliabik, teda výbrus spodnej hrany
                 <Head2 align="center">V prípade akýchkoľvek otázok nás neváhajte kontaktuje</Head2>
                 <Para align="center"> -<i> Profesionálne brúsenie korčúľ v Bratislave</i></Para>
             </div>
-            <Row className="zero">
+
             <div className="anchor" id="kontakty"></div>
-              <Col xsOffset={0} xs={12} smOffset={0} sm={12} mdOffset={0} md={12} lgOffset={0} lg={12} >
-            <div class="map"><iframe title="Mapa s miestom kde sídli naša firma." width="1920" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=SPORT%20BEKR%20s.r.o&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-            </Col>
-            </Row>
+              <iframe width="100%" height="500" title="Adresa: Bradáčova 1721/5, 851 01 Petržalka, Slovensko" id="gmap_canvas"  src="https://maps.google.com/maps?q=Servis%20a%20po%C5%BEi%C4%8Dov%C5%88a%20ly%C5%BE%C3%AD%20-%20BEKR%20Brad%C3%A1%C4%8Dova%201721%2F5%2C%20851%2001%20Petr%C5%BEalka%2C%20Slovensko&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </Content>
     </Layout>
   </>
@@ -211,11 +241,6 @@ const Content = styled.div`
   img{
     width:100%;
     height:auto;
-  }
-
-  .zero{
-    padding:0;
-    margin:0;
   }
 
 .map {
@@ -312,7 +337,7 @@ table{
 }
 
 .margin-space-15{
-    margin: 15vh 0 10vh 0;  
+    margin: 15vh 0 15vh 0;  
 }
 
 .margin-space-10{
@@ -359,8 +384,9 @@ table{
 
 .firstSectionIcons{
   padding-top:40px;
-  max-height:8vw;
+  max-height:auto;
   min-height:100px;
+  max-width:130px;
   display: block;
   margin-left: auto;
   margin-right: auto;
