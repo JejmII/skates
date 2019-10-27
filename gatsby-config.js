@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Profesionálne brúsenie korčúľ v Bratislave`,
-    description: `Profesionálne brúsenie korčúľ v Bratislave.`,
+    description: `Sme firma, ktorá sa stará o profesionálne brúsenie korčúľ v Bratislave. Moderná technológia nám poskytuje brúsiť a dezinfikovať korčule od 4€. `,
     author: `Sebastián Vašš`,
   },
   plugins: [
@@ -20,13 +20,15 @@ module.exports = {
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
-        start_url: `/`,
+        start_url: `/index.html`,
         background_color: `#FFFFFF`,
         theme_color: `#FFFFFF`,
+        lang: `sk`,
         display: `minimal-ui`,
         icon: `src/images/Logo.png`, 
       },
     },
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -40,6 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
+        "displayName": false
       },
     },
   ],

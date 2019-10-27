@@ -9,7 +9,7 @@ class NavDesktop extends React.Component {
       render() {
       return (
         <Navbar>
-          <Container1>
+          <Container1 modifiers="MarginAuto">
             <Menu>
               <div></div>
               <ul>

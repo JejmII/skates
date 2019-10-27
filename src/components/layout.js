@@ -27,8 +27,8 @@ const data = useStaticQuery(graphql`
 query {
   back: file(relativePath: { eq: "back.jpg" }) {
     childImageSharp {
-      fluid(maxWidth: 1920, maxHeight: 1080, quality: 100) {
-        ...GatsbyImageSharpFluid
+      fluid(maxWidth: 1920, maxHeight: 1080, quality: 80) {
+        ...GatsbyImageSharpFluid_noBase64
       }
     }
   }
@@ -38,8 +38,9 @@ query {
   return (
     <>
     <Helmet>
-      <link data-n-head="true" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
       <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,500&display=swap&subset=latin-ext" rel="stylesheet"/>
+      <link rel="manifest" href="/manifest.json"/>
+      <link rel="stylesheet" href="#" type="text/css" media="print" />
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -56,7 +57,8 @@ query {
         <SetupBody2>
         <NavWrapper />
         <BgImage
-              title="astronaut"
+              title="Pozadie stránky"
+              alt="Homepage úvodna fotka | Profesionálne brúsenie korčúľ v Bratislave "
               fluid={data.back.childImageSharp.fluid}
           />
           <main>{children}</main>

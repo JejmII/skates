@@ -42,6 +42,7 @@ const BgImage = ({
   height,
   mobileHeight,
   overlayColor,
+  alt,
   children,
   className
 }) => (
@@ -49,6 +50,7 @@ const BgImage = ({
     <FakeBgImage
       fluid={fluid}
       title={title}
+      alt={alt}
       height={height}
       mobileHeight={mobileHeight}
     />
@@ -58,6 +60,7 @@ const BgImage = ({
 BgImage.propTypes = {
   fluid: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
   height: PropTypes.string,
   mobileHeight: PropTypes.string,
   overlayColor: PropTypes.string,

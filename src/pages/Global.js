@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
         }
 
     *, *:before, *:after {
-        box-sizing: inherited;
+        box-sizing: inherit;
     }
 
     body {
